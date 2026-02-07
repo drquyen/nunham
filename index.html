@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Clean Minimal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>YHCT Phương Quyên | Kim Hỏa Tương Phối</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Jura:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Bảng màu Tươi sáng & Hiện đại */
         :root {
-            --primary-teal: #00a896; /* Xanh ngọc chủ đạo */
-            --accent-coral: #ff6b6b; /* Cam san hô điểm nhấn */
-            --bg-light: #f0f4f8;     /* Nền tổng thể */
-            --text-dark: #2d3748;    /* Màu chữ chính */
-            --text-muted: #718096;   /* Màu chữ phụ */
-            --card-white: #ffffff;   /* Nền thẻ */
+            /* Mạng Kim: Trắng, Vàng, Xám Bạc */
+            --kim-color: #d4af37; /* Vàng Gold */
+            --kim-light: #ffffff;
+            
+            /* Mạng Hỏa: Đỏ, Cam, Hồng */
+            --hoa-color: #e53935; /* Đỏ đầm */
+            --hoa-light: #ff8a80;
+
+            /* Nền Xanh Sáng (Yêu cầu) */
+            --bg-blue-light: #e0f7fa;
+            --bg-blue-dark: #b2ebf2;
+            --text-dark: #263238;
         }
 
         body {
@@ -24,156 +29,229 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--bg-light);
-            /* Họa tiết vân chấm bi rất mờ */
-            background-image: radial-gradient(#cbd5e0 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #f5f5f5;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
         }
 
-        /* --- THẺ CARD VISIT --- */
+        /* --- KHUNG CARD --- */
         .card {
             position: relative;
             width: 700px;
             height: 400px;
-            background-color: var(--card-white);
+            /* Gradient Xanh sáng hiện đại */
+            background: linear-gradient(120deg, var(--bg-blue-light) 0%, #ffffff 50%, var(--bg-blue-dark) 100%);
             border-radius: 20px;
-            /* Bóng đổ mềm mại */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             border: 1px solid #fff;
         }
 
-        /* --- LOGO NỀN (Watermark) --- */
-        .logo-watermark-area {
+        /* --- HỌA TIẾT NGŨ HÀNH DECOR --- */
+        .decor-circle {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1; 
-            opacity: 0.08; /* Rất mờ để làm nền */
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        /* Vòng tròn Kim (Tròn trịa, màu trắng/vàng) */
+        .circle-kim {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--kim-color);
+            top: -100px;
+            right: -50px;
+        }
+        /* Hình tam giác/nhọn Hỏa (Mô phỏng bằng clip-path) */
+        .shape-hoa {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--hoa-light), transparent);
+            bottom: -150px;
+            left: -100px;
+            opacity: 0.15;
+            z-index: 0;
         }
 
-        .wm-p, .wm-q {
-            font-family: 'Playfair Display', serif;
-            font-size: 26rem;
-            font-weight: 900;
-            position: absolute;
-            line-height: 0.8;
-            color: var(--primary-teal);
-        }
-        .wm-p { left: -50px; top: 40px; }
-        .wm-q { left: 110px; top: 140px; z-index: -1; }
-
-
-        /* --- PHẦN NỘI DUNG --- */
-        .info-area {
-            flex: 1;
-            /* Căn lề trái lớn để tránh logo nền */
-            padding: 50px 50px 50px 280px;
+        /* --- HEADER: LOGO & TÊN --- */
+        .header-section {
+            flex: 2;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: var(--text-dark);
+            align-items: center;
+            padding: 0 40px;
+            position: relative;
             z-index: 10;
         }
 
-        .brand-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 4px; /* Giãn chữ rộng cho sang */
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            font-weight: 600;
+        /* Logo P&Q Lồng Nhau (Kim & Hỏa) */
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin-right: 30px;
         }
 
-        /* TÊN PHÒNG KHÁM */
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            text-transform: uppercase;
+        .logo-char {
+            font-family: 'Cinzel', serif;
+            font-size: 8rem;
+            position: absolute;
             line-height: 1;
-            margin: 0 0 25px 0;
-            color: var(--text-dark);
+            font-weight: 700;
         }
 
-        /* Gạch chân màu Cam */
-        .accent-divider {
-            width: 60px;
-            height: 6px;
-            background: var(--accent-coral);
-            margin-bottom: 40px;
-            border-radius: 20px;
+        /* Chữ P (Bs Phương - Kim) -> Màu Vàng Gold, Trắng */
+        .char-p {
+            color: var(--kim-color);
+            left: 0;
+            top: 0;
+            z-index: 2;
+            text-shadow: 2px 2px 0px #fff;
         }
 
-        .doctor-list {
+        /* Chữ Q (Bs Quyên - Hỏa) -> Màu Đỏ Cam */
+        .char-q {
+            color: var(--hoa-color);
+            left: 50px;
+            top: 20px;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .clinic-info {
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
-        .doctor-item {
+        .sub-text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #546e7a;
+        }
+
+        .main-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        /* Dải màu ngăn cách (Cân bằng Kim - Hỏa) */
+        .balance-line {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--kim-color), var(--hoa-color));
+            opacity: 0.8;
+        }
+
+        /* --- BODY: THÔNG TIN BÁC SĨ --- */
+        .body-section {
+            flex: 3;
+            display: flex;
+            justify-content: space-between; /* Chia 2 bên */
+            align-items: center;
+            padding: 20px 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .doctor-block {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .dr-label {
+            font-size: 0.85rem;
+            color: #78909c;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
         }
-
-        .dr-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--primary-teal);
-            font-size: 1rem;
-            margin-right: 15px;
-            background: rgba(0, 168, 150, 0.08);
-            padding: 6px 12px;
-            border-radius: 6px;
-        }
+        
+        /* Chấm tròn phong thủy trước tên */
+        .dot-kim { width: 10px; height: 10px; background: var(--kim-color); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 5px var(--kim-color);}
+        .dot-hoa { width: 10px; height: 10px; background: var(--hoa-color); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 5px var(--hoa-color);}
 
         .dr-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
-        /* Responsive Mobile */
+        /* --- FOOTER: ĐỊA CHỈ --- */
+        .footer-section {
+            padding: 15px 40px;
+            background: rgba(255,255,255,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .address-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #455a64;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .icon-map {
+            color: var(--hoa-color); /* Điểm nhấn màu đỏ cho icon */
+        }
+
+        /* Responsive */
         @media (max-width: 750px) {
-            .card { width: 90%; height: auto; flex-direction: column; padding-bottom: 50px; }
-            .logo-watermark-area { width: 100%; height: 250px; position: absolute; opacity: 0.06; }
-            .wm-p { font-size: 18rem; left: -20px; top: -20px; }
-            .wm-q { font-size: 18rem; left: 100px; top: 60px; }
-            .info-area { padding: 40px 30px; }
-            .main-title { font-size: 2.2rem; }
+            .card { width: 100%; height: auto; min-height: 500px;}
+            .header-section { flex-direction: column; text-align: center; padding-top: 30px; }
+            .logo-container { margin: 0 auto 20px; }
+            .body-section { flex-direction: column; gap: 30px; text-align: center; }
+            .dr-label { justify-content: center; }
+            .footer-section { padding: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="logo-watermark-area">
-            <div class="wm-p">P</div>
-            <div class="wm-q">Q</div>
-        </div>
+        <div class="decor-circle circle-kim"></div>
+        <div class="decor-circle shape-hoa"></div>
 
-        <div class="info-area">
-            <div class="brand-subtitle">Phòng Khám YHCT</div>
-            <h1 class="main-title">PHƯƠNG QUYÊN</h1>
-            <div class="accent-divider"></div>
-
-            <div class="doctor-list">
-                <div class="doctor-item">
-                    <span class="dr-title">Bs.</span>
-                    <span class="dr-name">Lâm Hoàng Phương</span>
-                </div>
-                <div class="doctor-item">
-                    <span class="dr-title">Bs.</span>
-                    <span class="dr-name">Nguyễn Thị Mỹ Quyên</span>
-                </div>
+        <div class="header-section">
+            <div class="logo-container">
+                <div class="logo-char char-p">P</div>
+                <div class="logo-char char-q">Q</div>
+            </div>
+            <div class="clinic-info">
+                <span class="sub-text">Phòng Khám Y học Cổ truyền</span>
+                <span class="main-name">Phương Quyên</span>
             </div>
         </div>
+
+        <div class="balance-line"></div>
+
+        <div class="body-section">
+            <div class="doctor-block">
+                <span class="dr-label"><span class="dot-kim"></span>Mạng Kim</span>
+                <span class="dr-name">Bs. Lâm Hoàng Phương</span>
+            </div>
+
+            <div class="doctor-block">
+                <span class="dr-label"><span class="dot-hoa"></span>Mạng Hỏa</span>
+                <span class="dr-name">Bs. Nguyễn Thị Mỹ Quyên</span>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="address-box">
+                <span class="icon-map">📍</span>
+                <span>Thành phố Trà Vinh, T
