@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Visit | YHCT Phương Quyên</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Noto+Serif+NP+Hmong:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -14,67 +14,151 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền tổng thể: Màu trầm của thảo mộc và giấy cũ */
+            /* Nền màu nâu trầm sang trọng */
             background: radial-gradient(circle at center, #4a3b32 0%, #2c241f 100%);
-            font-family: 'Noto Serif NP Hmong', serif;
-            overflow: hidden;
+            font-family: 'Playfair Display', serif;
+            overflow: hidden; /* Ẩn thanh cuộn */
         }
 
-        /* Chiếc Card Visit */
+        /* Khung Card Visit */
         .business-card {
             position: relative;
-            width: 600px;
-            height: 350px;
-            /* Nền card giả giấy dó cao cấp với viền vàng */
-            background: 
-                linear-gradient(to bottom right, rgba(255, 248, 220, 0.9), rgba(250, 235, 215, 0.95)),
-                url('https://www.transparenttextures.com/patterns/aged-paper.png'); /* Thêm vân giấy nhẹ */
-            background-blend-mode: overlay;
+            width: 650px;
+            height: 380px;
+            /* Màu nền giấy giả cổ */
+            background-color: #fdf5e6;
             border-radius: 15px;
-            box-shadow: 
-                0 20px 40px rgba(0,0,0,0.4), /* Bóng đổ sâu */
-                0 0 0 2px #b48b3e inset; /* Viền vàng kim bên trong */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             display: flex;
-            flex-direction: row;
             overflow: hidden;
-            border: 1px solid #b48b3e;
+            border: 2px solid #b48b3e; /* Viền vàng */
         }
 
-        /* ----- PHẦN BÊN TRÁI: LOGO & NGŨ HÀNH ----- */
+        /* --- Cột Trái: Logo & Ngũ Hành --- */
         .left-section {
-            flex: 2;
+            width: 40%;
+            background: rgba(180, 139, 62, 0.15); /* Nền vàng nhạt */
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(180, 139, 62, 0.1); /* Nền vàng nhẹ khu vực logo */
-            border-right: 1px solid rgba(180, 139, 62, 0.3);
-            overflow: hidden;
+            border-right: 1px solid #d4c5a3;
         }
 
-        /* Vòng tròn Ngũ Hành Tương Sinh làm nền */
-        .five-elements-ring {
+        /* Vòng tròn ngũ hành xoay (Làm nền) */
+        .five-elements {
             position: absolute;
-            width: 280px;
-            height: 280px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            opacity: 0.25; /* Làm mờ để làm nền */
-            filter: blur(8px); /* Làm nhòe tạo cảm giác khí */
-            /* Tạo dải màu ngũ hành: Mộc(Xanh lá) -> Hỏa(Đỏ) -> Thổ(Vàng đất) -> Kim(Trắng/Ghi) -> Thủy(Xanh dương/Đen) */
-            background: conic-gradient(
-                #2e7d32 0deg 72deg,   /* Mộc */
-                #c62828 72deg 144deg,  /* Hỏa */
-                #fbc02d 144deg 216deg, /* Thổ */
-                #cfd8dc 216deg 288deg, /* Kim */
-                #01579b 288deg 360deg  /* Thủy */
-            );
-            animation: rotateElements 20s linear infinite;
+            opacity: 0.2;
+            filter: blur(5px);
+            /* 5 màu ngũ hành: Xanh lá, Đỏ, Vàng, Trắng, Xanh dương */
+            background: conic-gradient(#2e7d32, #c62828, #fbc02d, #cfd8dc, #01579b, #2e7d32);
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Logo Chữ Lồng PQ */
+        .logo-pq {
+            position: relative;
+            font-family: 'Great Vibes', cursive; /* Font thư pháp */
+            font-size: 8rem;
+            z-index: 10;
+            line-height: 0.8;
+        }
+        .text-q {
+            color: #2e7d32; /* Chữ Q màu Xanh (Nủ) */
+            position: absolute;
+            left: -40px;
+            top: -60px;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+        }
+        .text-p {
+            color: #b48b3e; /* Chữ P màu Vàng (Nhẳm) */
+            position: absolute;
+            left: -10px;
+            top: -40px;
+            z-index: -1;
         }
 
-        @keyframes rotateElements {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        /* --- Cột Phải: Thông tin --- */
+        .right-section {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #3e2723;
         }
 
-        /* Logo PQ Lồng vào nhau */
-        .pq
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c241f;
+            border-bottom: 2px solid #b48b3e;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-row {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-bs {
+            font-weight: bold;
+            color: #b48b3e;
+            width: 40px;
+            font-size: 1rem;
+        }
+
+        /* Responsive cho điện thoại */
+        @media (max-width: 700px) {
+            .business-card {
+                flex-direction: column;
+                width: 90%;
+                height: auto;
+            }
+            .left-section, .right-section {
+                width: 100%;
+            }
+            .left-section { height: 200px; }
+            .logo-pq { font-size: 6rem; margin-top: 40px; margin-left: 40px;}
+            .right-section { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="business-card">
+        <div class="left-section">
+            <div class="five-elements"></div>
+            <div class="logo-pq">
+                <span class="text-q">Q</span>
+                <span class="text-p">P</span>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="title">Phòng Khám YHCT<br>Phương Quyên</div>
+            
+            <div class="info-row">
+                <span class="icon-bs">BS.</span>
+                <span>Lâm Hoàng Phương</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="icon-bs">Bs.</span>
+                <span>Nguyễn Thị Mỹ Quyên</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
