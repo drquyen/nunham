@@ -3,54 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QP | Nủ Nủ & Nhẳm Nhẳm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Phòng khám YHCT Phương Quyên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+NP:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-gold: #d4af37;
+            --medical-white: #f8f9fa;
+            --deep-blue: #003366;
+            --teal-blue: #006d77;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền 4D chuyển động trầm và sang trọng */
-            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
-            background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
+            /* Nền Gradient Xanh Dương sâu lắng, chuyên nghiệp */
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--teal-blue) 100%);
+            font-family: 'Noto Serif NP', serif; /* Font có chân cho văn bản chính */
+            color: var(--medical-white);
+            overflow-x: hidden;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 60px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            min-width: 300px;
-        }
-
-        .logo-container {
-            position: relative;
-            height: 200px;
-            width: 250px;
-            margin: 0 auto 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .brand-letter {
-            font-family: 'Cinzel',
+        /* Thêm họa tiết vân mây/thảo dược mờ
