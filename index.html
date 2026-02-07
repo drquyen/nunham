@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Graphic Monogram</title>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>YHCT Phương Quyên | Modern Art White</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Nền Than Chì Đậm (Dark Charcoal) - Tạo chiều sâu */
-            --bg-dark: #121212;
-            --card-bg: #1e1e24;
+            /* Nền Trắng Tinh Khôi (Gallery White) */
+            --bg-white: #ffffff;
+            --card-bg: #ffffff;
             
-            /* Màu Vàng Kim Loại (Brushed Gold) */
-            --gold: #d4af37;
-            /* Gradient Hoả (Fiery Red/Orange) */
-            --fire-gradient: linear-gradient(135deg, #ff4d4d, #fca311);
+            /* Màu Vàng Nghệ / Vàng Mù Tạt (Ochre Gold) - Đậm đà trên nền trắng */
+            --gold-ink: #d4af37;
             
-            /* Màu chữ */
-            --text-light: #ffffff;
-            --text-grey: #a0a0a0;
+            /* Màu Đỏ San Hô / Cam Đất (Terracotta) */
+            --red-ink: #e05c45;
+            
+            /* Màu chữ: Đen Than (Soft Black) - Dễ chịu hơn đen tuyền */
+            --text-black: #2b2b2b;
+            --text-grey: #666666;
         }
 
         body {
@@ -29,8 +30,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--bg-dark);
-            font-family: 'Jost', sans-serif; /* Font hiện đại, sạch sẽ */
+            background-color: #f2f2f2; /* Nền web xám nhẹ để tôn card trắng */
+            font-family: 'Manrope', sans-serif;
             overflow: hidden;
         }
 
@@ -40,71 +41,71 @@
             width: 750px;
             height: 450px;
             background-color: var(--card-bg);
-            /* Thêm vân xước kim loại nhẹ */
-            background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
-            border-radius: 12px;
-            /* Bóng đổ màu tía/vàng tạo cảm giác "cyberpunk" nhẹ */
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
+            /* Vân giấy mỹ thuật cao cấp */
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            /* Bo góc rất nhẹ */
+            border-radius: 4px;
+            /* Bóng đổ rất nhẹ và xa, tạo cảm giác lơ lửng */
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
             display: flex;
             overflow: hidden;
         }
 
-        /* --- CỘT TRÁI: LOGO ĐỒ HOẠ CÁCH TÂN --- */
+        /* --- CỘT TRÁI: LOGO NGHỆ THUẬT (Màu nước/Mực in) --- */
         .left-art-panel {
-            flex: 4; /* Chiếm 40% */
+            flex: 4;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1), transparent 50%);
+            background-color: #fafafa; /* Xám cực nhạt phân chia khu vực */
+            border-right: 1px solid #eee;
         }
 
-        /* Container chứa logo nghệ thuật */
         .graphic-logo {
             position: absolute;
             top: 50%;
-            left: 45%;
+            left: 50%;
             transform: translate(-50%, -50%);
             width: 300px;
             height: 300px;
-            /* Kỹ thuật Blend Mode để tạo hiệu ứng chồng màu in ấn */
+            /* QUAN TRỌNG: Isolate để blend mode chỉ tác dụng trong khung này */
             isolation: isolate; 
         }
 
         .logo-shape {
-            font-family: 'Italiana', serif; /* Font chữ có chân, nét thanh mảnh cực sang */
+            font-family: 'Prata', serif; /* Font có chân thanh mảnh, sang chảnh */
             font-size: 18rem;
             position: absolute;
             line-height: 0.8;
             font-weight: 400;
         }
 
-        /* Chữ P (Kim) - Vàng Gold sắc sảo */
+        /* Chữ P (Kim) - Màu Vàng Nghệ */
         .shape-p {
-            color: var(--gold);
-            left: 0;
+            color: var(--gold-ink);
+            left: -10px;
             top: 20px;
             z-index: 1;
-            /* Hiệu ứng: làm sáng vùng giao nhau */
-            mix-blend-mode: lighten; 
-            opacity: 0.9;
+            /* Hiệu ứng: Nhân màu (Multiply) giống mực in đè lên giấy */
+            mix-blend-mode: multiply; 
+            opacity: 0.8;
         }
 
-        /* Chữ Q (Hoả) - Gradient Lửa chảy */
+        /* Chữ Q (Hoả) - Màu Đỏ Cam */
         .shape-q {
-            background: var(--fire-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            right: -20px;
+            color: var(--red-ink);
+            right: -10px;
             top: -20px;
             z-index: 2;
-            /* Hiệu ứng: Chồng màu tạo ra màu cam sáng ở giữa */
-            mix-blend-mode: lighten; 
-            transform: rotate(-5deg); /* Nghiêng nhẹ tạo động lực */
+            /* Hiệu ứng: Nhân màu */
+            mix-blend-mode: multiply; 
+            opacity: 0.8;
+            transform: rotate(-5deg);
         }
 
-        /* --- CỘT PHẢI: NỘI DUNG --- */
+        /* --- CỘT PHẢI: NỘI DUNG CLEAN --- */
         .right-content-panel {
-            flex: 6; /* Chiếm 60% */
-            padding: 50px;
+            flex: 6;
+            padding: 50px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -113,31 +114,31 @@
         }
 
         .sub-title {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
+            font-size: 0.7rem;
+            letter-spacing: 4px; /* Giãn chữ rộng */
             text-transform: uppercase;
             color: var(--text-grey);
-            margin-bottom: 10px;
-            font-weight: 500;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .main-title {
-            font-family: 'Italiana', serif;
+            font-family: 'Prata', serif;
             font-size: 3rem;
             text-transform: uppercase;
             line-height: 1;
-            margin: 0 0 30px 0;
-            color: var(--text-light);
+            margin: 0 0 35px 0;
+            color: var(--text-black);
         }
         
-        /* Điểm nhấn màu vàng cho tên thương hiệu */
-        .highlight { color: var(--gold); }
+        /* Chữ Quyên đổi màu nhấn nhẹ */
+        .highlight { color: var(--gold-ink); }
 
+        /* Đường kẻ mảnh tối giản */
         .divider-graphic {
-            width: 80px;
-            height: 3px;
-            /* Đường kẻ gradient hiện đại */
-            background: linear-gradient(to right, var(--gold), var(--fire-gradient));
+            width: 60px;
+            height: 2px;
+            background-color: var(--text-black);
             margin-bottom: 40px;
         }
 
@@ -146,7 +147,7 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .doc-item {
@@ -155,29 +156,31 @@
         }
 
         .doc-role {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--gold); /* Chức danh màu vàng */
+            color: var(--red-ink); /* Chức danh màu đỏ đất */
             margin-bottom: 5px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .doc-name {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--text-light);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-black);
+            font-family: 'Prata', serif;
         }
 
-        /* Footer liên hệ */
+        /* Footer liên hệ tối giản */
         .contact-footer {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
+            gap: 25px;
+            font-size: 0.85rem;
             color: var(--text-grey);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid #eee;
             padding-top: 20px;
+            font-weight: 500;
         }
 
         .contact-item {
@@ -186,15 +189,15 @@
             gap: 8px;
         }
         
-        .contact-icon { color: var(--gold); }
-        .phone-highlight { color: var(--text-light); font-weight: 600; }
+        .contact-icon { color: var(--gold-ink); font-size: 1rem; }
+        .phone-highlight { color: var(--text-black); font-weight: 700; }
 
         /* Responsive Mobile */
         @media (max-width: 768px) {
             .card { width: 95%; height: auto; flex-direction: column; }
-            .left-art-panel { height: 250px; width: 100%; }
+            .left-art-panel { height: 250px; width: 100%; border-right: none; border-bottom: 1px solid #eee; }
             .graphic-logo { transform: translate(-50%, -50%) scale(0.8); left: 50%;}
-            .right-content-panel { padding: 30px 25px; }
+            .right-content-panel { padding: 40px 30px; }
             .main-title { font-size: 2.5rem; }
             .contact-footer { flex-direction: column; gap: 10px; }
         }
