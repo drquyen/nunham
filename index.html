@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Kim Hỏa Tương Phối</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Jura:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>YHCT Phương Quyên | Elegant Mix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Mạng Kim: Trắng, Vàng, Xám Bạc */
-            --kim-color: #d4af37; /* Vàng Gold */
-            --kim-light: #ffffff;
+            /* --- BẢNG MÀU MỚI (TRẦM HƠN, BỚT CHÓI) --- */
             
-            /* Mạng Hỏa: Đỏ, Cam, Hồng */
-            --hoa-color: #e53935; /* Đỏ đầm */
-            --hoa-light: #ff8a80;
+            /* Màu Kim: Vàng đồng cổ, trầm, sang trọng */
+            --kim-muted: #9E7E38; 
+            
+            /* Màu Hoả: Đỏ đất nung/đỏ rượu vang trầm, ấm áp */
+            --hoa-muted: #8E2F2F;
 
-            /* Nền Xanh Sáng (Yêu cầu) */
-            --bg-blue-light: #e0f7fa;
-            --bg-blue-dark: #b2ebf2;
-            --text-dark: #263238;
+            /* Nền Xanh Sáng nhẹ nhàng */
+            --bg-blue-light: #e8f5f7;
+            --bg-blue-medium: #d1eef2;
+            --text-dark: #2c3e50;
+            --text-grey: #607d8b;
         }
 
         body {
@@ -29,7 +30,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f5f5f5;
+            background-color: #f0f2f5;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
         }
@@ -39,41 +40,34 @@
             position: relative;
             width: 700px;
             height: 400px;
-            /* Gradient Xanh sáng hiện đại */
-            background: linear-gradient(120deg, var(--bg-blue-light) 0%, #ffffff 50%, var(--bg-blue-dark) 100%);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            /* Gradient nền xanh sáng nhẹ nhàng, tinh tế */
+            background: linear-gradient(135deg, var(--bg-blue-light) 0%, #ffffff 50%, var(--bg-blue-medium) 100%);
+            border-radius: 24px;
+            /* Bóng đổ mềm mại, cao cấp */
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid #fff;
+            border: 1px solid rgba(255,255,255,0.8);
         }
 
-        /* --- HỌA TIẾT NGŨ HÀNH DECOR --- */
-        .decor-circle {
+        /* --- HỌA TIẾT NỀN (MIX MÀU TRẦM) --- */
+        .decor-bg {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.1;
+            filter: blur(60px);
+            opacity: 0.12; /* Rất mờ */
             z-index: 0;
         }
-        /* Vòng tròn Kim (Tròn trịa, màu trắng/vàng) */
-        .circle-kim {
-            width: 300px;
-            height: 300px;
-            border: 2px solid var(--kim-color);
-            top: -100px;
-            right: -50px;
+        .bg-kim {
+            width: 400px; height: 400px;
+            background: var(--kim-muted);
+            top: -150px; right: -100px;
         }
-        /* Hình tam giác/nhọn Hỏa (Mô phỏng bằng clip-path) */
-        .shape-hoa {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--hoa-light), transparent);
-            bottom: -150px;
-            left: -100px;
-            opacity: 0.15;
-            z-index: 0;
+        .bg-hoa {
+            width: 400px; height: 400px;
+            background: var(--hoa-muted);
+            bottom: -150px; left: -100px;
         }
 
         /* --- HEADER: LOGO & TÊN --- */
@@ -81,41 +75,41 @@
             flex: 2;
             display: flex;
             align-items: center;
-            padding: 0 40px;
+            padding: 0 50px;
             position: relative;
             z-index: 10;
         }
 
-        /* Logo P&Q Lồng Nhau (Kim & Hỏa) */
+        /* Logo P&Q Lồng Nhau (Màu trầm) */
         .logo-container {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             position: relative;
-            margin-right: 30px;
+            margin-right: 35px;
         }
 
         .logo-char {
             font-family: 'Cinzel', serif;
-            font-size: 8rem;
+            font-size: 7.5rem;
             position: absolute;
             line-height: 1;
             font-weight: 700;
+            /* Hiệu ứng chồng màu (Mix) */
+            mix-blend-mode: multiply; 
         }
 
-        /* Chữ P (Bs Phương - Kim) -> Màu Vàng Gold, Trắng */
+        /* P (Kim trầm) */
         .char-p {
-            color: var(--kim-color);
-            left: 0;
-            top: 0;
+            color: var(--kim-muted);
+            left: 0; top: 0;
             z-index: 2;
-            text-shadow: 2px 2px 0px #fff;
+            opacity: 0.9;
         }
 
-        /* Chữ Q (Bs Quyên - Hỏa) -> Màu Đỏ Cam */
+        /* Q (Hoả trầm) */
         .char-q {
-            color: var(--hoa-color);
-            left: 50px;
-            top: 20px;
+            color: var(--hoa-muted);
+            left: 45px; top: 25px;
             z-index: 1;
             opacity: 0.9;
         }
@@ -126,34 +120,37 @@
         }
 
         .sub-text {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #546e7a;
+            color: var(--text-grey);
+            font-weight: 500;
+            margin-bottom: 5px;
         }
 
         .main-name {
             font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--text-dark);
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
-        /* Dải màu ngăn cách (Cân bằng Kim - Hỏa) */
-        .balance-line {
+        /* Đường kẻ mix màu tinh tế */
+        .balance-line-mix {
             width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, var(--kim-color), var(--hoa-color));
-            opacity: 0.8;
+            height: 2px;
+            /* Gradient chuyển từ vàng trầm sang đỏ trầm */
+            background: linear-gradient(to right, transparent, var(--kim-muted), var(--hoa-muted), transparent);
+            opacity: 0.6;
         }
 
         /* --- BODY: THÔNG TIN BÁC SĨ --- */
         .body-section {
             flex: 3;
             display: flex;
-            justify-content: space-between; /* Chia 2 bên */
+            justify-content: space-around;
             align-items: center;
             padding: 20px 50px;
             position: relative;
@@ -163,68 +160,78 @@
         .doctor-block {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
+            align-items: flex-start;
         }
 
-        .dr-label {
-            font-size: 0.85rem;
-            color: #78909c;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 5px;
+        .dr-title-row {
             display: flex;
             align-items: center;
         }
         
-        /* Chấm tròn phong thủy trước tên */
-        .dot-kim { width: 10px; height: 10px; background: var(--kim-color); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 5px var(--kim-color);}
-        .dot-hoa { width: 10px; height: 10px; background: var(--hoa-color); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 5px var(--hoa-color);}
+        /* Chấm tròn màu trầm tinh tế */
+        .dot-indicator { 
+            width: 12px; height: 12px; 
+            border-radius: 50%; 
+            display: inline-block; 
+            margin-right: 12px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dot-kim-muted { background: var(--kim-muted); }
+        .dot-hoa-muted { background: var(--hoa-muted); }
+
+        .dr-title {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
         .dr-name {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-dark);
+            padding-left: 24px; /* Thụt vào thẳng hàng với chữ Bs */
         }
 
         /* --- FOOTER: ĐỊA CHỈ --- */
         .footer-section {
-            padding: 15px 40px;
-            background: rgba(255,255,255,0.6);
+            padding: 18px 50px;
+            background: rgba(255,255,255,0.7); /* Nền kính mờ nhẹ */
+            backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            justify-content: flex-start;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            font-weight: 500;
         }
 
-        .address-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #455a64;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        
         .icon-map {
-            color: var(--hoa-color); /* Điểm nhấn màu đỏ cho icon */
+            color: var(--hoa-muted); /* Điểm nhấn nhỏ màu đỏ trầm */
+            margin-right: 10px;
+            font-size: 1.1rem;
         }
 
         /* Responsive */
         @media (max-width: 750px) {
-            .card { width: 100%; height: auto; min-height: 500px;}
-            .header-section { flex-direction: column; text-align: center; padding-top: 30px; }
-            .logo-container { margin: 0 auto 20px; }
-            .body-section { flex-direction: column; gap: 30px; text-align: center; }
-            .dr-label { justify-content: center; }
-            .footer-section { padding: 20px; text-align: center; }
+            .card { width: 90%; height: auto; min-height: 550px;}
+            .header-section { flex-direction: column; text-align: center; padding-top: 40px; }
+            .logo-container { margin: 0 auto 30px; transform: scale(0.9); }
+            .body-section { flex-direction: column; gap: 40px; align-items: center; }
+            .doctor-block { align-items: center; }
+            .dr-name { padding-left: 0; text-align: center;}
+            .footer-section { justify-content: center; text-align: center; padding: 20px;}
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="decor-circle circle-kim"></div>
-        <div class="decor-circle shape-hoa"></div>
+        <div class="decor-bg bg-kim"></div>
+        <div class="decor-bg bg-hoa"></div>
 
         <div class="header-section">
             <div class="logo-container">
@@ -237,21 +244,31 @@
             </div>
         </div>
 
-        <div class="balance-line"></div>
+        <div class="balance-line-mix"></div>
 
         <div class="body-section">
             <div class="doctor-block">
-                <span class="dr-label"><span class="dot-kim"></span>Mạng Kim</span>
-                <span class="dr-name">Bs. Lâm Hoàng Phương</span>
+                <div class="dr-title-row">
+                    <span class="dot-indicator dot-kim-muted"></span>
+                    <span class="dr-title">Bs.</span>
+                </div>
+                <span class="dr-name">Lâm Hoàng Phương</span>
             </div>
 
             <div class="doctor-block">
-                <span class="dr-label"><span class="dot-hoa"></span>Mạng Hỏa</span>
-                <span class="dr-name">Bs. Nguyễn Thị Mỹ Quyên</span>
+                <div class="dr-title-row">
+                    <span class="dot-indicator dot-hoa-muted"></span>
+                    <span class="dr-title">Bs.</span>
+                </div>
+                <span class="dr-name">Nguyễn Thị Mỹ Quyên</span>
             </div>
         </div>
 
         <div class="footer-section">
-            <div class="address-box">
-                <span class="icon-map">📍</span>
-                <span>Thành phố Trà Vinh, T
+            <span class="icon-map">📍</span>
+            <span>Thành phố Trà Vinh, Tỉnh Vĩnh Long</span>
+        </div>
+    </div>
+
+</body>
+</html>
