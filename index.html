@@ -161,3 +161,125 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary-blue: #1A3C6C;
+            --accent-blue: #00AEEF;
+            --bg-white: #FFFFFF;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card-back {
+            width: 540px;
+            height: 330px;
+            background-color: var(--primary-blue); /* Nền xanh đậm sang trọng */
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Họa tiết mờ tạo chiều sâu */
+        .card-back::after {
+            content: "PQ";
+            position: absolute;
+            font-size: 250px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            z-index: 0;
+        }
+
+        .services-container {
+            z-index: 1;
+            width: 80%;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--accent-blue);
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+
+        .service-item {
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Chấm tròn trang trí */
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-blue);
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-top: 25px;
+            font-size: 12px;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-back">
+        <div class="services-container">
+            <div class="main-title">Chuyên Khoa Y Học Cổ Truyền</div>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="dot"></div>
+                    ĐIỆN CHÂM
+                </div>
+                <div class="service-item">
+                    <div class="dot"></div>
+                    CẤY CHỈ
+                </div>
+                <div class="service-item">
+                    <div class="dot"></div>
+                    XOA BÓP - BẤM HUYỆT
+                </div>
+            </div>
+
+            <div class="footer-logo">PHUONG QUYEN CLINIC</div>
+        </div>
+    </div>
+
+</body>
+</html>
