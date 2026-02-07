@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Minimalist Luxury</title>
+    <title>YHCT Phương Quyên | Deep Gold Luxury</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -13,15 +13,18 @@
             /* Màu chữ chính: Xanh đen */
             --text-dark: #1a2a3a; 
             /* Màu chữ phụ: Xám */
-            --text-grey: #8d959e;
+            --text-grey: #6c757d;
 
-            /* Màu Vàng Kim Loại */
-            --gold-start: #bf953f;
-            --gold-mid: #fcf6ba;
-            --gold-end: #b38728;
-            /* Màu Đồng (Chữ P) */
-            --bronze: #b38728;
-            /* Màu Đỏ Chu Sa (Biểu tượng Hỏa) */
+            /* --- MÀU VÀNG ĐẬM HƠN (NEW) --- */
+            /* Gradient Vàng Mật Ong/Hổ Phách */
+            --gold-start: #d4af37; /* Vàng cổ điển */
+            --gold-mid: #f1c40f;   /* Vàng hướng dương đậm */
+            --gold-end: #b8860b;   /* Vàng nâu (Dark Goldenrod) */
+            
+            /* Màu Đồng Đậm (Dùng cho chữ P, SĐT) - Đậm hơn bản cũ */
+            --bronze: #8a6e28; 
+            
+            /* Màu Đỏ Chu Sa - Giữ nguyên */
             --seal-red: #a81c1c;
         }
 
@@ -37,13 +40,15 @@
             overflow: hidden;
         }
 
+        /* Hiệu ứng chữ vàng đậm đà */
         .gold-text {
             background: linear-gradient(to right, var(--gold-start), var(--gold-mid), var(--gold-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
-            filter: drop-shadow(0 2px 2px rgba(191, 149, 63, 0.2));
-            animation: shine 5s linear infinite;
+            /* Bóng nhẹ để nổi bật */
+            filter: drop-shadow(0 1px 1px rgba(184, 134, 11, 0.3));
+            animation: shine 6s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
 
@@ -55,51 +60,52 @@
             background-color: var(--bg-cream);
             background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
             border-radius: 4px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             display: flex;
             overflow: hidden;
-            border: 1px solid rgba(191, 149, 63, 0.2);
+            border: 1px solid rgba(184, 134, 11, 0.3); /* Viền đậm hơn */
         }
 
-        /* --- CỘT TRÁI: LOGO (Đã thu nhỏ) --- */
+        /* --- CỘT TRÁI: LOGO --- */
         .left-panel {
-            width: 30%; /* Thu hẹp cột trái lại chút */
+            width: 30%;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-right: 1px solid rgba(0, 0, 0, 0.04);
-            background: rgba(191, 149, 63, 0.03);
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(184, 134, 11, 0.05); /* Nền vàng nhẹ */
         }
 
         .logo-monogram {
             position: relative;
-            width: 120px; /* Nhỏ hơn (cũ là 180px) */
+            width: 120px;
             height: 120px;
         }
 
         .char-big {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 7rem; /* Nhỏ hơn (cũ là 10rem) */
+            font-size: 7rem;
             position: absolute;
             line-height: 1;
         }
 
-        /* P - Rõ nét */
+        /* P - Màu Đồng Đậm Rõ Nét */
         .p-big {
-            font-weight: 600;
+            font-weight: 700;
             left: 5px; top: 0;
             color: var(--bronze);
-            opacity: 0.5;
+            opacity: 0.6; /* Rõ hơn */
             z-index: 0;
         }
-        /* Q - Gold Gradient */
+        /* Q - Gradient Vàng Đậm */
         .q-big {
             font-weight: 400; right: 5px; top: 30px;
             background: linear-gradient(135deg, var(--gold-start), var(--gold-mid));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             z-index: 1;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
         }
 
         /* --- CỘT PHẢI: NỘI DUNG --- */
@@ -120,7 +126,7 @@
             text-transform: uppercase; 
             color: var(--text-grey); 
             margin-bottom: 8px; 
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .main-brand {
@@ -131,7 +137,9 @@
             line-height: 1;
             margin: 0;
         }
-        .gold-line { width: 40px; height: 1px; background: linear-gradient(90deg, var(--gold-mid), transparent); margin-bottom: 25px; }
+        
+        /* Đường kẻ vàng đậm */
+        .gold-line { width: 40px; height: 2px; background: linear-gradient(90deg, var(--gold-end), transparent); margin-bottom: 25px; }
 
         /* --- DANH SÁCH BÁC SĨ --- */
         .doctors { display: flex; flex-direction: column; gap: 20px; }
@@ -154,28 +162,28 @@
             font-weight: 700; 
         }
 
-        /* --- BIỂU TƯỢNG HÌNH HỌC (Thay cho chữ Kim/Hỏa) --- */
+        /* --- BIỂU TƯỢNG HÌNH HỌC --- */
         
-        /* Hình Tròn Vàng (Kim) */
+        /* Hình Tròn Vàng Đậm (Kim) */
         .shape-kim { 
             width: 14px; height: 14px; 
-            border: 2px solid var(--bronze); 
-            border-radius: 50%; /* Tròn */
-            opacity: 0.8;
+            border: 2px solid var(--bronze); /* Viền đậm hơn */
+            border-radius: 50%;
+            opacity: 1;
         }
 
         /* Hình Vuông Đỏ (Hỏa) */
         .shape-hoa { 
             width: 14px; height: 14px; 
             background-color: var(--seal-red); 
-            transform: rotate(45deg); /* Xoay thành hình thoi cho nghệ thuật */
-            opacity: 0.8;
+            transform: rotate(45deg);
+            opacity: 0.9;
         }
 
         /* --- FOOTER: LIÊN HỆ --- */
         .footer {
             margin-top: 40px;
-            border-top: 1px solid rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0,0,0,0.08);
             padding-top: 15px;
             display: flex;
             flex-direction: column;
@@ -185,17 +193,17 @@
         .phone-row {
             display: flex; gap: 20px; 
             font-family: 'Montserrat', sans-serif; 
-            font-size: 1rem; 
-            font-weight: 600;
-            color: var(--bronze);
+            font-size: 1.1rem; /* Chữ to hơn chút */
+            font-weight: 700; /* Đậm hơn */
+            color: var(--bronze); /* Màu đồng đậm dễ đọc */
         }
         
         .phone-number { display: flex; align-items: center; gap: 8px; }
-        .phone-icon { font-size: 0.8rem; opacity: 0.8; }
+        .phone-icon { font-size: 0.9rem; color: var(--gold-end); }
 
         .address-row {
-            font-size: 0.75rem;
-            color: var(--text-grey);
+            font-size: 0.8rem;
+            color: #555; /* Màu xám đậm hơn chút cho dễ đọc */
             letter-spacing: 0.5px;
             display: flex; align-items: center; gap: 8px; font-weight: 500;
         }
@@ -251,7 +259,7 @@
                     <span class="phone-number">
                         <span class="phone-icon">📞</span> 0976.673.429
                     </span>
-                    <span style="color: #ddd;">|</span>
+                    <span style="color: #ccc;">|</span>
                     <span class="phone-number">
                         <span class="phone-icon">📞</span> 0975.345.727
                     </span>
