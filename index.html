@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Modern Bright</title>
+    <title>YHCT Phương Quyên | Clean Minimal</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Định nghĩa bảng màu tươi sáng hiện đại */
+        /* Bảng màu Tươi sáng & Hiện đại */
         :root {
-            --primary-teal: #00a896; /* Xanh ngọc hiện đại */
-            --accent-coral: #ff6b6b; /* Cam san hô tươi tắn */
-            --bg-light: #f0f4f8;     /* Nền xám xanh rất nhạt */
-            --text-dark: #2d3748;    /* Màu chữ xám đậm (không dùng đen tuyền) */
+            --primary-teal: #00a896; /* Xanh ngọc chủ đạo */
+            --accent-coral: #ff6b6b; /* Cam san hô điểm nhấn */
+            --bg-light: #f0f4f8;     /* Nền tổng thể */
+            --text-dark: #2d3748;    /* Màu chữ chính */
             --text-muted: #718096;   /* Màu chữ phụ */
-            --card-white: #ffffff;   /* Nền thẻ trắng tinh */
+            --card-white: #ffffff;   /* Nền thẻ */
         }
 
         body {
@@ -24,12 +24,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền sáng sủa, sạch sẽ */
             background-color: var(--bg-light);
-            /* Thêm họa tiết vân nhẹ hiện đại */
-            background-image: 
-                radial-gradient(at 10% 20%, rgba(0, 168, 150, 0.1) 0px, transparent 50%),
-                radial-gradient(at 90% 80%, rgba(255, 107, 107, 0.1) 0px, transparent 50%);
+            /* Họa tiết vân chấm bi rất mờ */
+            background-image: radial-gradient(#cbd5e0 1px, transparent 1px);
+            background-size: 20px 20px;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
         }
@@ -39,14 +37,13 @@
             position: relative;
             width: 700px;
             height: 400px;
-            /* Nền thẻ trắng sáng */
             background-color: var(--card-white);
-            border-radius: 25px;
-            /* Bóng đổ nhẹ, hiện đại (Soft shadow) */
-            box-shadow: 0 20px 60px -10px rgba(0, 168, 150, 0.15), 0 10px 20px -10px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            /* Bóng đổ mềm mại */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             display: flex;
-            border: 1px solid rgba(255,255,255,0.8);
+            border: 1px solid #fff;
         }
 
         /* --- LOGO NỀN (Watermark) --- */
@@ -54,12 +51,11 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 55%;
+            width: 50%;
             height: 100%;
             overflow: hidden;
             z-index: 1; 
-            /* Màu xanh ngọc rất nhạt làm nền */
-            opacity: 0.08;
+            opacity: 0.08; /* Rất mờ để làm nền */
         }
 
         .wm-p, .wm-q {
@@ -68,37 +64,35 @@
             font-weight: 900;
             position: absolute;
             line-height: 0.8;
-            /* Sử dụng màu Xanh Ngọc chủ đạo */
             color: var(--primary-teal);
         }
         .wm-p { left: -50px; top: 40px; }
         .wm-q { left: 110px; top: 140px; z-index: -1; }
 
 
-        /* --- PHẦN NỘI DUNG CHÍNH --- */
+        /* --- PHẦN NỘI DUNG --- */
         .info-area {
             flex: 1;
-            /* Đẩy nội dung sang phải để không đè lên logo nền quá nhiều */
+            /* Căn lề trái lớn để tránh logo nền */
             padding: 50px 50px 50px 280px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             color: var(--text-dark);
             z-index: 10;
-            position: relative;
         }
 
         .brand-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 3px;
+            font-size: 0.9rem;
+            letter-spacing: 4px; /* Giãn chữ rộng cho sang */
             text-transform: uppercase;
-            color: var(--text-muted); /* Màu xám nhẹ */
-            margin-bottom: 10px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
-        /* TÊN PHÒNG KHÁM - IN HOA */
+        /* TÊN PHÒNG KHÁM */
         .main-title {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
@@ -106,23 +100,22 @@
             text-transform: uppercase;
             line-height: 1;
             margin: 0 0 25px 0;
-            /* Màu Xanh Ngọc đậm */
             color: var(--text-dark);
         }
 
-        /* Gạch chân màu Cam San Hô tạo điểm nhấn */
+        /* Gạch chân màu Cam */
         .accent-divider {
-            width: 70px;
-            height: 5px;
+            width: 60px;
+            height: 6px;
             background: var(--accent-coral);
             margin-bottom: 40px;
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         .doctor-list {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
         }
 
         .doctor-item {
@@ -133,59 +126,30 @@
         .dr-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            /* Chức danh màu Xanh Ngọc */
             color: var(--primary-teal);
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-right: 15px;
-            background: rgba(0, 168, 150, 0.1); /* Nền nhẹ cho chức danh */
-            padding: 5px 10px;
-            border-radius: 8px;
+            background: rgba(0, 168, 150, 0.08);
+            padding: 6px 12px;
+            border-radius: 6px;
         }
 
         .dr-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* --- HÌNH ẢNH BẮT MẠCH --- */
-        .pulse-image-container {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            /* Viền màu Cam San Hô nổi bật */
-            border: 4px solid var(--accent-coral);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
-            overflow: hidden;
-            z-index: 20;
-            background: #fff; /* Viền trắng mỏng giữa ảnh và viền cam */
-            padding: 3px;
-        }
-
-        .pulse-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            /* Bỏ filter màu cũ, giữ màu ảnh tự nhiên tươi sáng */
-        }
-
         /* Responsive Mobile */
         @media (max-width: 750px) {
-            body { padding: 20px; }
-            .card { width: 100%; height: auto; flex-direction: column; padding-bottom: 120px; /* Chừa chỗ cho ảnh */ }
-            .logo-watermark-area { width: 100%; height: 250px; position: absolute; opacity: 0.1; }
+            .card { width: 90%; height: auto; flex-direction: column; padding-bottom: 50px; }
+            .logo-watermark-area { width: 100%; height: 250px; position: absolute; opacity: 0.06; }
             .wm-p { font-size: 18rem; left: -20px; top: -20px; }
             .wm-q { font-size: 18rem; left: 100px; top: 60px; }
-            .info-area { padding: 40px 30px; align-items: flex-start; }
+            .info-area { padding: 40px 30px; }
             .main-title { font-size: 2.2rem; }
-            /* Trên điện thoại, đưa ảnh xuống góc dưới */
-            .pulse-image-container { width: 90px; height: 90px; bottom: 30px; right: 30px; }
         }
     </style>
 </head>
@@ -212,11 +176,4 @@
                     <span class="dr-name">Nguyễn Thị Mỹ Quyên</span>
                 </div>
             </div>
-             <div class="pulse-image-container">
-                <img src="https://images.unsplash.com/photo-1631815587646-a85065c6c254?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Bác sĩ bắt mạch">
-            </div>
         </div>
-    </div>
-
-</body>
-</html>
