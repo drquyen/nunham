@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phòng khám YHCT Phương Quyên</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+NP:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <title>Card Visit | YHCT Phương Quyên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Noto+Serif+NP+Hmong:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --primary-gold: #d4af37;
-            --medical-white: #f8f9fa;
-            --deep-blue: #003366;
-            --teal-blue: #006d77;
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -21,11 +14,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền Gradient Xanh Dương sâu lắng, chuyên nghiệp */
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--teal-blue) 100%);
-            font-family: 'Noto Serif NP', serif; /* Font có chân cho văn bản chính */
-            color: var(--medical-white);
-            overflow-x: hidden;
+            /* Nền tổng thể: Màu trầm của thảo mộc và giấy cũ */
+            background: radial-gradient(circle at center, #4a3b32 0%, #2c241f 100%);
+            font-family: 'Noto Serif NP Hmong', serif;
+            overflow: hidden;
         }
 
-        /* Thêm họa tiết vân mây/thảo dược mờ
+        /* Chiếc Card Visit */
+        .business-card {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            /* Nền card giả giấy dó cao cấp với viền vàng */
+            background: 
+                linear-gradient(to bottom right, rgba(255, 248, 220, 0.9), rgba(250, 235, 215, 0.95)),
+                url('https://www.transparenttextures.com/patterns/aged-paper.png'); /* Thêm vân giấy nhẹ */
+            background-blend-mode: overlay;
+            border-radius: 15px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.4), /* Bóng đổ sâu */
+                0 0 0 2px #b48b3e inset; /* Viền vàng kim bên trong */
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            border: 1px solid #b48b3e;
+        }
+
+        /* ----- PHẦN BÊN TRÁI: LOGO & NGŨ HÀNH ----- */
+        .left-section {
+            flex: 2;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(180, 139, 62, 0.1); /* Nền vàng nhẹ khu vực logo */
+            border-right: 1px solid rgba(180, 139, 62, 0.3);
+            overflow: hidden;
+        }
+
+        /* Vòng tròn Ngũ Hành Tương Sinh làm nền */
+        .five-elements-ring {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            opacity: 0.25; /* Làm mờ để làm nền */
+            filter: blur(8px); /* Làm nhòe tạo cảm giác khí */
+            /* Tạo dải màu ngũ hành: Mộc(Xanh lá) -> Hỏa(Đỏ) -> Thổ(Vàng đất) -> Kim(Trắng/Ghi) -> Thủy(Xanh dương/Đen) */
+            background: conic-gradient(
+                #2e7d32 0deg 72deg,   /* Mộc */
+                #c62828 72deg 144deg,  /* Hỏa */
+                #fbc02d 144deg 216deg, /* Thổ */
+                #cfd8dc 216deg 288deg, /* Kim */
+                #01579b 288deg 360deg  /* Thủy */
+            );
+            animation: rotateElements 20s linear infinite;
+        }
+
+        @keyframes rotateElements {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Logo PQ Lồng vào nhau */
+        .pq
