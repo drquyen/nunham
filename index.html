@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHCT Phương Quyên | Blue Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;400;600&family=Allison&display=swap" rel="stylesheet">
+    <title>YHCT Phương Quyên | Royal Blue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -14,188 +14,204 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền Xanh Dương Đa Chiều (Deep Blue Universe) */
-            background: radial-gradient(circle at 20% 20%, #004e92, #000428);
+            /* Nền Xanh Dương Hoàng Gia Sâu Thẳm */
+            background: radial-gradient(circle at center, #003366, #000c24);
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
         }
 
-        /* Hiệu ứng hạt bụi ánh sáng trôi nổi (Decor) */
-        .floating-particle {
+        /* Hạt sáng trôi nổi decor */
+        .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(248, 181, 0, 0.3); /* Màu vàng kim mờ */
             border-radius: 50%;
-            animation: floatParticle 10s infinite linear;
+            filter: blur(5px);
+            animation: floatUp infinite linear;
         }
-        @keyframes floatParticle {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            50% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            to { transform: translateY(-100vh); opacity: 0; }
         }
 
         /* --- THẺ CARD VISIT --- */
         .card {
             position: relative;
-            width: 650px;
-            height: 380px;
-            /* Hiệu ứng Kính mờ Xanh (Blue Frosted Glass) */
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            overflow: hidden;
-            display: flex;
-        }
-
-        /* Lớp phủ ngũ hành trừu tượng phía sau */
-        .abstract-bg {
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 400px;
+            width: 700px;
             height: 400px;
-            background: conic-gradient(from 0deg, #38ef7d, #00c6ff, #fdbb2d);
-            filter: blur(80px);
-            opacity: 0.4;
-            border-radius: 50%;
-            animation: breathe 10s ease-in-out infinite alternate;
-        }
-        @keyframes breathe { from { transform: scale(1); } to { transform: scale(1.2); } }
-
-        /* --- LOGO NGHỆ THUẬT (BÊN TRÁI) --- */
-        .logo-area {
-            flex: 1.2;
-            position: relative;
+            /* Kính mờ xanh đậm */
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.5), rgba(0, 12, 36, 0.7));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 25px;
+            border: 2px solid rgba(248, 181, 0, 0.3); /* Viền vàng mờ */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
             overflow: hidden;
             display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Chữ P và Q lồng nhau phá cách */
-        .art-logo {
-            font-family: 'Cinzel Decorative', cursive; /* Font có chân hoa văn */
-            font-size: 14rem; /* Cực lớn */
+        /* --- LOGO NỀN NGHỆ THUẬT --- */
+        .logo-watermark-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1; /* Nằm dưới text */
+            opacity: 0.15; /* Mờ làm nền */
+        }
+
+        .wm-p, .wm-q {
+            font-family: 'Playfair Display', serif;
+            font-size: 25rem; /* Siêu lớn */
+            font-weight: 900;
             position: absolute;
             line-height: 0.8;
-            opacity: 0.9;
+            color: #f8b500; /* Màu vàng kim */
         }
+        .wm-p { left: -50px; top: 50px; }
+        .wm-q { left: 100px; top: 150px; z-index: -1; }
 
-        .char-p {
-            color: rgba(255, 255, 255, 0.1); /* Mờ ảo làm nền */
-            left: -20px;
-            top: 20px;
-            transform: rotate(-10deg);
-            z-index: 1;
-        }
 
-        .char-q {
-            /* Gradient Vàng Kim loại */
-            background: linear-gradient(to bottom, #fceabb, #f8b500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            left: 40px;
-            top: 40px;
-            z-index: 2;
-            filter: drop-shadow(0 0 15px rgba(248, 181, 0, 0.4));
-            mix-blend-mode: overlay; /* Hòa trộn màu sắc nghệ thuật */
-        }
-
-        /* --- THÔNG TIN (BÊN PHẢI) --- */
+        /* --- PHẦN NỘI DUNG CHÍNH --- */
         .info-area {
-            flex: 1.8;
-            padding: 40px;
+            flex: 1;
+            padding: 50px 40px 40px 280px; /* Đẩy text sang phải tránh logo nền */
             display: flex;
             flex-direction: column;
             justify-content: center;
             color: #fff;
             z-index: 10;
+            position: relative;
         }
 
-        .brand-name {
+        .brand-subtitle {
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #89cff0; /* Màu xanh băng */
+            color: #a1c4fd; /* Xanh sáng */
             margin-bottom: 5px;
+            font-weight: 500;
         }
 
+        /* TÊN PHÒNG KHÁM - IN HOA ĐỀU TĂM TẮP */
         .main-title {
-            font-family: 'Cinzel Decorative', cursive;
-            font-size: 2rem;
-            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase; /* Bắt buộc in hoa */
+            line-height: 1.1;
             margin: 0 0 20px 0;
-            background: linear-gradient(to right, #fff, #a1c4fd);
+            /* Gradient Vàng Kim loại cho chữ */
+            background: linear-gradient(to right, #fff, #f8b500, #fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
         }
 
-        .line {
-            width: 60px;
-            height: 3px;
-            background: #f8b500;
-            margin-bottom: 30px;
+        /* Gạch chân vàng */
+        .gold-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #f8b500, transparent);
+            margin-bottom: 35px;
         }
 
-        .doctor-box {
-            margin-bottom: 15px;
+        .doctor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .doctor-item {
+            display: flex;
+            align-items: baseline;
         }
 
         .dr-title {
-            font-family: 'Allison', cursive; /* Font chữ ký tay mềm mại */
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             color: #f8b500;
-            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-right: 12px;
+            font-style: italic;
         }
 
         .dr-name {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
             font-size: 1.1rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        /* --- HÌNH ẢNH BẮT MẠCH GÓC NHỎ --- */
+        .pulse-image-container {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Hình tròn */
+            border: 3px solid #f8b500; /* Viền vàng */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .pulse-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Đảm bảo ảnh lấp đầy hình tròn */
+            /* Bộ lọc màu ấm để hợp với tông vàng (tùy chọn) */
+            filter: sepia(0.2) contrast(1.1);
+        }
+
         /* Responsive Mobile */
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
             .card { width: 90%; height: auto; flex-direction: column; }
-            .logo-area { height: 200px; }
-            .art-logo { font-size: 10rem; }
-            .char-p { left: 20%; top: 10%; }
-            .char-q { left: 35%; top: 15%; }
+            .logo-watermark-area { width: 100%; height: 250px; position: relative; opacity: 0.3; }
+            .wm-p { font-size: 15rem; left: 20px; top: 20px; }
+            .wm-q { font-size: 15rem; left: 120px; top: 80px; }
             .info-area { padding: 30px; }
+            .main-title { font-size: 2rem; }
+            /* Trên điện thoại, hình nhỏ lại một chút */
+            .pulse-image-container { width: 80px; height: 80px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="floating-particle" style="width: 5px; height: 5px; left: 10%; top: 10%; animation-duration: 12s;"></div>
-    <div class="floating-particle" style="width: 8px; height: 8px; left: 80%; top: 60%; animation-duration: 18s;"></div>
-    <div class="floating-particle" style="width: 4px; height: 4px; left: 40%; top: 30%; animation-duration: 9s;"></div>
+    <div class="particle" style="width: 5px; height: 5px; left: 10%; animation-duration: 15s;"></div>
+    <div class="particle" style="width: 8px; height: 8px; left: 80%; animation-duration: 20s;"></div>
+    <div class="particle" style="width: 4px; height: 4px; left: 40%; animation-duration: 12s;"></div>
 
     <div class="card">
-        <div class="abstract-bg"></div>
-
-        <div class="logo-area">
-            <div class="art-logo char-p">P</div>
-            <div class="art-logo char-q">Q</div>
+        <div class="logo-watermark-area">
+            <div class="wm-p">P</div>
+            <div class="wm-q">Q</div>
         </div>
 
         <div class="info-area">
-            <div class="brand-name">Phòng Khám YHCT</div>
-            <h1 class="main-title">Phương Quyên</h1>
-            <div class="line"></div>
+            <div class="brand-subtitle">Phòng Khám YHCT</div>
+            <h1 class="main-title">PHƯƠNG QUYÊN</h1>
+            <div class="gold-divider"></div>
 
-            <div class="doctor-box">
-                <span class="dr-title">Bs</span>
-                <span class="dr-name">Lâm Hoàng Phương</span>
+            <div class="doctor-list">
+                <div class="doctor-item">
+                    <span class="dr-title">Bs.</span>
+                    <span class="dr-name">Lâm Hoàng Phương</span>
+                </div>
+                <div class="doctor-item">
+                    <span class="dr-title">Bs.</span>
+                    <span class="dr-name">Nguyễn Thị Mỹ Quyên</span>
+                </div>
             </div>
-            
-            <div class="doctor-box">
-                <span class="dr-title">Bs</span>
-                <span class="dr-name">Nguyễn Thị Mỹ Quyên</span>
+             <div class="pulse-image-container">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Bác sĩ bắt mạch">
             </div>
         </div>
     </div>
