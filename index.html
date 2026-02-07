@@ -174,7 +174,7 @@
 
         body {
             background-color: #f0f0f0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -185,7 +185,7 @@
         .card-back {
             width: 540px;
             height: 330px;
-            background-color: var(--primary-blue); /* Nền xanh đậm sang trọng */
+            background-color: var(--primary-blue);
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
@@ -198,61 +198,64 @@
             text-align: center;
         }
 
-        /* Họa tiết mờ tạo chiều sâu */
+        /* Họa tiết PQ chìm tinh tế */
         .card-back::after {
             content: "PQ";
             position: absolute;
-            font-size: 250px;
+            font-size: 280px;
             font-weight: 900;
             color: rgba(255, 255, 255, 0.03);
             z-index: 0;
+            pointer-events: none;
         }
 
         .services-container {
             z-index: 1;
-            width: 80%;
+            width: 70%;
         }
 
         .main-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             color: var(--accent-blue);
         }
 
         .service-list {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 20px 0;
+            gap: 60px; /* Khoảng cách rộng giữa 2 dịch vụ */
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 25px 0;
         }
 
         .service-item {
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* Chấm tròn trang trí */
-        .dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
-            margin: 0 auto;
+        /* Dấu gạch đứng phân cách nhẹ */
+        .divider {
+            width: 1px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         .footer-logo {
-            margin-top: 25px;
-            font-size: 12px;
-            opacity: 0.7;
-            letter-spacing: 1px;
+            margin-top: 35px;
+            font-size: 11px;
+            font-weight: 300;
+            opacity: 0.6;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -263,21 +266,12 @@
             <div class="main-title">Chuyên Khoa Y Học Cổ Truyền</div>
             
             <div class="service-list">
-                <div class="service-item">
-                    <div class="dot"></div>
-                    ĐIỆN CHÂM
-                </div>
-                <div class="service-item">
-                    <div class="dot"></div>
-                    CẤY CHỈ
-                </div>
-                <div class="service-item">
-                    <div class="dot"></div>
-                    XOA BÓP - BẤM HUYỆT
-                </div>
+                <div class="service-item">ĐIỆN CHÂM</div>
+                <div class="divider"></div>
+                <div class="service-item">CẤY CHỈ</div>
             </div>
 
-            <div class="footer-logo">PHUONG QUYEN CLINIC</div>
+            <div class="footer-logo">Phuong Quyen Clinic</div>
         </div>
     </div>
 
