@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nủ Nủ & Nhẳm Nhẳm | Forever</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <title>QP | Nủ Nủ & Nhẳm Nhẳm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -14,159 +14,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Nền gradient sang trọng, nhẹ nhàng */
-            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-            font-family: 'Playfair Display', serif;
+            /* Nền 4D chuyển động trầm và sang trọng */
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            font-family: 'Montserrat', sans-serif;
             overflow: hidden;
         }
 
-        /* Hiệu ứng thẻ kính mờ (Glassmorphism) */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .glass-card {
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px;
             text-align: center;
             position: relative;
             z-index: 10;
-            max-width: 80%;
+            min-width: 300px;
         }
 
-        /* Tên Nủ Nủ - Màu xanh rêu đậm sang trọng */
-        .name-green {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: #274e13; /* Forest Green */
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        /* Tên Nhẳm Nhẳm - Màu vàng Gold */
-        .name-gold {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: #b48b3e; /* Gold */
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        /* Chữ nối 'yêu' - Nhỏ, tinh tế */
-        .connector {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 1rem;
-            color: #555;
-            margin: 25px 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
+        .logo-container {
             position: relative;
+            height: 200px;
+            width: 250px;
+            margin: 0 auto 30px;
             display: flex;
-            align-items: center;
             justify-content: center;
-        }
-        
-        /* Đường gạch ngang 2 bên chữ 'yêu' */
-        .connector::before, .connector::after {
-            content: "";
-            height: 1px;
-            background-color: #b48b3e;
-            width: 50px;
-            margin: 0 15px;
-            opacity: 0.5;
+            align-items: center;
         }
 
-        /* Trái tim chính giữa - Tinh tế hơn */
-        .heart-wrapper {
-            margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.1; /* Làm mờ đi để làm nền */
-            z-index: -1;
-            animation: pulse 3s infinite ease-in-out;
-        }
-
-        /* Vẽ trái tim lớn làm nền */
-        .heart-shape {
-            position: relative;
-            width: 200px;
-            height: 180px;
-        }
-        .heart-shape:before, .heart-shape:after {
-            position: absolute;
-            content: "";
-            left: 100px;
-            top: 0;
-            width: 100px;
-            height: 160px;
-            background: #d32f2f;
-            border-radius: 50px 50px 0 0;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-        .heart-shape:after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-
-        /* Hiệu ứng nhịp đập chậm rãi, nhẹ nhàng */
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.05; }
-            50% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
-            100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.05; }
-        }
-
-        /* Biểu tượng tim nhỏ ở giữa */
-        .small-heart {
-            color: #d32f2f;
-            font-size: 2rem;
-            animation: gentle-beat 2s infinite ease-in-out;
-        }
-        
-        @keyframes gentle-beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* Điều chỉnh cho điện thoại */
-        @media (max-width: 600px) {
-            .name-green, .name-gold {
-                font-size: 2.5rem;
-            }
-            .glass-card {
-                padding: 40px 20px;
-                width: 85%;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="glass-card">
-        <div class="heart-wrapper">
-            <div class="heart-shape"></div>
-        </div>
-
-        <h1 class="name-green">Nủ Nủ</h1>
-        
-        <div class="connector">
-            <span>YÊU</span>
-        </div>
-        
-        <div class="small-heart">❤</div>
-        <br>
-
-        <h1 class="name-gold">Nhẳm Nhẳm</h1>
-    </div>
-
-</body>
-</html>
+        .brand-letter {
+            font-family: 'Cinzel',
